@@ -5,7 +5,9 @@
 * Darknet 말고 다른 네트워크도 사용해볼것
 * 밑에 사진은 voc2007 데이터를 5에폭 이전으로 실험했을 때의 샘플 결과
 
+Epoch ~ 4
 ![Epoch ~ 4](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/1500_7.jpg)
 <br/>
 
+Epoch ~ 5
 ![Epoch ~ 5](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/2500_7.jpg)
