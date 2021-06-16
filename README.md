@@ -6,7 +6,7 @@
 * Darknet 말고 다른 네트워크도 사용해볼것
 <br/>
 * YOLO V3 (darknet-53 weights)
-  [Click1][https://drive.google.com/file/d/1zw8g69HY-P93l7bOdbH4J9y7XIU38Nkv/view?usp=sharing]
+  [https://drive.google.com/file/d/1zw8g69HY-P93l7bOdbH4J9y7XIU38Nkv/view?usp=sharing][Click 1]
 <br/>
 
 * xml_to_text.py가 xml파일을 text로 만드는것
