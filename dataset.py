@@ -38,7 +38,7 @@ def transform_targets_for_output(y_true, grid_size, anchor_idxs):
     return tf.tensor_scatter_nd_update(y_true_out, indexes.stack(), updates.stack())
 
 def read_label(file, anchors, anchor_mask, size, batch_size):
-    # https://github.com/zzh8829/yolov3-tf2/blob/3925682b0cc7552fcef72b7b305577b8ad6c839e/yolov3_tf2/dataset.py
+   
     y_out = []
     box_info = []
     grid_size = size // 32
