@@ -11,12 +11,7 @@
 * 밑에 사진은 voc2007 데이터를 5에폭 이전으로 실험했을 때의 샘플 결과
 <br/>
 
-
-## Epoch ~ 4
-<br/>
-
 ## Epoch : 5 ~ 7
-
 
 | ![1500_7](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/1500_7.jpg) | ![2500_7](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/2500_7.jpg) |
 | ----------------------------------------------- | ----------------------------------------------- |
