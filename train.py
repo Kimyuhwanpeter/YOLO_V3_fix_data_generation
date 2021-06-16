@@ -25,25 +25,25 @@ FLAGS = easydict.EasyDict({"img_size": 416,
 
                            "lr": 0.001,
                            
-                           "tr_img_path": "D:/[1]DB/[3]detection_DB/voc2007/VOCtrainval_06-Nov-2007/VOCdevkit/VOC2007/JPEGImages",
+                           "tr_img_path": "/content/train/JPEGImages",
                            
-                           "tr_txt_path": "D:/[1]DB/[3]detection_DB/voc2007/VOCtrainval_06-Nov-2007/VOCdevkit/VOC2007/xml_to_text",
+                           "tr_txt_path": "/content/train/xml_to_text",
 
-                           "te_img_path": "D:/[1]DB/[3]detection_DB/voc2007/VOCtest_06-Nov-2007/VOCdevkit/VOC2007/JPEGImages",
+                           "te_img_path": "/content/test/JPEGImages",
                            
-                           "te_txt_path": "D:/[1]DB/[3]detection_DB/voc2007/VOCtest_06-Nov-2007/VOCdevkit/VOC2007/xml_to_text",
+                           "te_txt_path": "/content/test/xml_to_text",
 
-                           "class_name": "D:/[1]DB/[3]detection_DB/voc2007/objects-label.txt",
+                           "class_name": "/content/objects-label.txt",
                            
                            "pre_checkpoint": False,
                            
                            "pre_checkpoint_path": "",
                            
-                           "save_checkpoint": "",
+                           "save_checkpoint": "/content/drive/My Drive/detection/checkpoint",
                            
-                           "save_sample": "",
+                           "save_sample": "/content/drive/My Drive/detection/sample_images",
                            
-                           "load_weight": "yolov3.tf"})
+                           "load_weight": "/content/drive/My Drive/detection/ck/yolov3.tf"})
 
 optim = tf.keras.optimizers.Adam(FLAGS.lr)
 
@@ -107,10 +107,10 @@ def main():
     model = YoloV3(FLAGS.img_size, 3, masks=yolo_anchor_masks, classes=FLAGS.num_classes)
 
     model_pretrained = YoloV3(FLAGS.img_size, 3, masks=yolo_anchor_masks, classes=FLAGS.num_classes)
-    model_pretrained.load_weights("C:/Users/Yuhwan/Downloads/ck/yolov3.tf")
+    model_pretrained.load_weights(FLAGS.load_weight)
     model.get_layer('yolo_darknet').set_weights(
         model_pretrained.get_layer('yolo_darknet').get_weights())
-    #freeze_all(model.get_layer('yolo_darknet'))
+    freeze_all(model.get_layer('yolo_darknet'))
     
     x_36, x_61, x = model.output
     x = YoloConv(512, name='yolo_conv_0')(x)
@@ -163,8 +163,22 @@ def main():
             if count % 10 == 0:
                 print("YOLO V3 (내 버전): Epoch >> {} [{}/{}]; loss >> {}".format(epoch, step+1, tr_idx, totla_loss))
 
-            if count % 1000 == 0:
+            if count % 500 == 0:
                 test_sample(model, batch_images, class_name, count)
+
+            if count % 1000 == 0:
+                model_dir = FLAGS.save_checkpoint
+
+                folder_name = int(count/1000)
+                folder_neme_str = '%s/%s' % (model_dir, folder_name)
+
+                if not os.path.isdir(folder_neme_str):
+                    print("make {} folder to save checkpoint".format(folder_name))
+                    os.makedirs(folder_neme_str)
+
+                checkpoint = tf.train.Checkpoint(model=model,optim=optim)
+                checkpoint_dir = folder_neme_str + "/" + "YOLO3_{}_steps.ckpt".format(count + 1)
+                checkpoint.save(checkpoint_dir)
 
 
             count += 1
