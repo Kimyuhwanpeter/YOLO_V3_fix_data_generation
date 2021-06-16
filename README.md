@@ -13,8 +13,13 @@
 
 
 ## Epoch ~ 4
-![Epoch ~ 4](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/1500_7.jpg)
 <br/>
 
-## Epoch ~ 5
-![Epoch ~ 5](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/2500_7.jpg)
+## Epoch : 5 ~ 7
+
+
+| ![1500_7](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/1500_7.jpg) | ![2500_7](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/2500_7.jpg) |
+| ----------------------------------------------- | ----------------------------------------------- |
+| ![4000_5](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/4000_5.jpg) | ![4000_7](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/4000_7.jpg) |
+
+
