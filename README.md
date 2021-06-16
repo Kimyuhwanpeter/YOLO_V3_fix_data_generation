@@ -7,9 +7,9 @@
 <br/>
 
 
-* Epoch ~ 4
+## Epoch ~ 4
 ![Epoch ~ 4](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/1500_7.jpg)
 <br/>
 
-* Epoch ~ 5
+## Epoch ~ 5
 ![Epoch ~ 5](https://github.com/Kimyuhwanpeter/YOLO_V3_fix_data_generation/blob/main/2500_7.jpg)
