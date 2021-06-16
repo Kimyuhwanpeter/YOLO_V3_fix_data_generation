@@ -7,7 +7,10 @@
 <br/>
 
 * YOLO V3 (darknet-53 weights)
-* [Click] (https://drive.google.com/file/d/1zw8g69HY-P93l7bOdbH4J9y7XIU38Nkv/view?usp=sharing)
+* [Click to download the weights_0](https://drive.google.com/file/d/1zw8g69HY-P93l7bOdbH4J9y7XIU38Nkv/view?usp=sharing)
+* [Click to download the weights_1](https://drive.google.com/file/d/1SMdUWhQZleI-AS9-2xVpGu_SFGEZ_Zs1/view?usp=sharing)
+* [Click to download the weights_2](https://drive.google.com/file/d/1MWN1h7i302GYT13RTMi4v2do5b1i4XXU/view?usp=sharing)
+* 위  세개파일을 한 폴더에 넣은 뒤 사용하면 됩니다
 <br/>
 
 * xml_to_text.py가 xml파일을 text로 만드는것
