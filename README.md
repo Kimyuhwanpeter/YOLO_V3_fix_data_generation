@@ -13,6 +13,11 @@
 * 위  세개파일을 한 폴더에 넣은 뒤 사용하면 됩니다
 <br/>
 
+* 아래 파일은 VOC 2007 train 및 test 데이터입니다 (xml -> text로 바꾼것.)
+* [voc2007_train](https://drive.google.com/file/d/1gen5BH_LQ9pY8mgEnGrB5z1MHvo8aacq/view?usp=sharing)
+* [voc2007_test](https://drive.google.com/file/d/1TvvGrwrpa4F0Bp45x6cej1vNIapVC3wb/view?usp=sharing)
+<br/>
+
 * xml_to_text.py가 xml파일을 text로 만드는것
 * 모르는게 있으면 메일 (taekkuon@dongguk.edu로 문의바람)
 * 밑에 사진은 voc2007 데이터를 5에폭 이전으로 실험했을 때의 샘플 결과
