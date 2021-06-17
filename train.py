@@ -125,6 +125,13 @@ def main():
     model = tf.keras.Model(model.input, (output_0, output_1, output_2), name='yolov3')
     model.summary()
 
+    if FLAGS.pre_checkpoint:
+        ckpt = tf.train.Checkpoint(model=model, optim=optim)
+        ckpt_manager = tf.train.CheckpointManager(ckpt, FLAGS.pre_checkpoint_path, 5)
+
+        if ckpt_manager.latest_checkpoint:
+            ckpt.restore(ckpt_manager.latest_checkpoint)
+
     class_name = np.loadtxt(FLAGS.class_name, dtype=np.str, skiprows=0, usecols=0)
 
     tr_txt = os.listdir(FLAGS.tr_txt_path)
@@ -179,6 +186,8 @@ def main():
                 checkpoint = tf.train.Checkpoint(model=model,optim=optim)
                 checkpoint_dir = folder_neme_str + "/" + "YOLO3_{}_steps.ckpt".format(count + 1)
                 checkpoint.save(checkpoint_dir)
+
+
 
 
             count += 1
